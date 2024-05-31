@@ -11,14 +11,17 @@
 
 .hero{
     width: 100%;
-    height: 100vh;
-    background-image: linear-gradient(rgba(12,3,51,0.3),rgba(12,3,51,0.4));
+    height: 95vh;
+    background-image: linear-gradient(rgba(12, 3, 51, 0.137),rgba(12, 3, 51, 0.192));
     position: relative;
     padding: 0 5%;
     display: flex;
     align-items: center;
     justify-content: center;
 }
+
+
+/*****NAVBAR*****/
 
 nav{
     width: 100%;
@@ -45,6 +48,9 @@ nav ul li a{
     font-size: 20px;
     font-weight: 500;
 }
+
+
+/*BACK-VIDEO*/
 
 .content{
     text-align: center;
@@ -91,5 +97,42 @@ nav ul li a{
     }
 }
 
+/*PERSONAL INFO*/
+.showcase{
+    background: #ddd;
+    padding: 4%;
+}
+.row{
+    height: 350px;
+    background: #fff;
+    box-shadow: 0px 0px 20px 0px #00000050;
+}
+.row1{
+    margin-bottom: 3rem;
+}
 
-
+.row1 .img-box,.row2 .text-box{
+    float: left;
+    width: 50%;
+}
+.row2 .img-box,.row1 .text-box{
+    float: right;
+    width: 50%;
+}
+.row .img-box{
+    height: 100%;
+}
+.row .text-box{
+    padding: 3rem;
+}
+.row .img-box img{
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.row::after{
+    content: "";
+    display: block;
+    clear: both;
+}
