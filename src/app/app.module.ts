@@ -8,15 +8,20 @@ import { HttpClientModule } from '@angular/common/http';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './pages/home/home.component';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { AboutusComponent } from './pages/aboutus/aboutus.component';
+import { ContactComponent } from './pages/contact/contact.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    AboutusComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule, FormsModule, HttpClientModule, BrowserAnimationsModule,
+    AppRoutingModule, FormsModule, HttpClientModule, BrowserAnimationsModule, MatSnackBarModule
   ],
   providers: [
     provideClientHydration(),
