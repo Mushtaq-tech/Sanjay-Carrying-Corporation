@@ -1,1 +1,36 @@
-<p>contact works!</p>
+<nav>
+    <img src="assets/scc-logo.png" alt="logo" height="80px" width="80px">
+    <ul>
+        <li><a routerLink="/">Home</a></li>
+        <li><a routerLink="/aboutus">About Us</a></li>
+        <li><a routerLink="/conatct">Contact</a></li>
+    </ul>
+</nav>
+
+<div class="contact-form-container">
+    <form (ngSubmit)="onSubmit()" #contactForm="ngForm">
+      <div class="form-group">
+        <label for="fullname">Full Name</label>
+        <input type="text" id="fullname" name="fullname" required [(ngModel)]="contactData.fullname" class="form-control">
+      </div>
+  
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required [(ngModel)]="contactData.email" class="form-control">
+      </div>
+  
+      <div class="form-group">
+        <label for="subject">Subject</label>
+        <input type="text" id="subject" name="subject" required [(ngModel)]="contactData.subject" class="form-control">
+      </div>
+  
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" required [(ngModel)]="contactData.message" class="form-control"></textarea>
+      </div>
+  
+      <button type="submit" class="btn-submit">Submit</button>
+      
+    </form>
+  </div>
+  

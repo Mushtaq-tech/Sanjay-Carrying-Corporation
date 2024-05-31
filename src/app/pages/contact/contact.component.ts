@@ -20,9 +20,9 @@ export class ContactComponent {
 
   async onSubmit() {
 
-    emailjs.init('fIQYtOablJh_U8NvK')
+    emailjs.init('TZ6WGG8HAEMrYFF7S')
 
-    let resp= await emailjs.send("service_soyo507","template_tbgzbwo",{
+    let resp= await emailjs.send("service_5yp8see","template_ud0m9un",{
       from_email: this.contactData.email,
       from_name: this.contactData.fullname,
       subject: this.contactData.subject,
