@@ -199,3 +199,128 @@ nav ul li a{
     left: 0;
     top: 0;
 }
+
+.image-container img {
+    max-width: 30%;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.fade-in {
+    opacity: 1;
+}
+
+.fade-out {
+    opacity: 0;
+}
+
+.stats-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 0;
+    background-color: #f4f4f4;
+}
+.stats-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 0;
+    background-color: #f4f4f4;
+}
+
+.stats-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.stat {
+    text-align: center;
+    margin: 0 20px;
+}
+
+.stat .counter {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.stat p {
+    margin-top: 5px;
+    font-size: 1rem;
+}
+
+.image-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.image-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.image-container img {
+    max-width: 100%;
+    height: auto;
+    width: auto;
+    max-height: 300px; /* Adjust the max-height as needed */
+    max-width: 300px;  /* Adjust the max-width as needed */
+}
+
+.arrow-left, .arrow-right {
+    width: 0;
+    height: 0;
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.arrow-left {
+    border-right: 20px solid #333;
+    left: -20px;
+}
+
+.arrow-right {
+    border-left: 20px solid #333;
+    right: -20px;
+}
+
+.slider {
+    background: #fff;
+    padding: 1rem;
+    overflow: hidden;
+}
+
+.slide-track {
+    display: flex;
+    width: calc(250px * 14);
+    animation: scroll 40s linear infinite;
+}
+
+.slide {
+    width: 250px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-250px * 7));
+    }
+}

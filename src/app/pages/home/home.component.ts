@@ -13,6 +13,7 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     if (isPlatformBrowser(this.platformId)) {
       this.startImageSlideshow();
+      this.initCounters();
     }
   }
 
@@ -63,4 +64,42 @@ export class HomeComponent implements OnInit {
     setInterval(updateImages, 3000);
   }
 
+  initCounters(): void {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          this.animateCounters();
+          observer.unobserve(entry.target);
+        }
+      });
+    });
+
+    const statsSection = this.renderer.selectRootElement('.stats-section', true);
+    if (statsSection) {
+      observer.observe(statsSection);
+    }
+  }
+
+  animateCounters(): void {
+    const counters = Array.from(document.querySelectorAll('.counter')) as HTMLElement[];
+    counters.forEach(counter => {
+      const updateCount = () => {
+        if (counter) {
+          const target = +(counter.getAttribute('data-target') ?? 0);
+          const count = +(counter.innerText ?? 0);
+
+          const increment = target / 200;
+
+          if (count < target) {
+            counter.innerText = `${Math.ceil(count + increment)}`;
+            setTimeout(updateCount, 20);
+          } else {
+            counter.innerText = target.toString();
+          }
+        }
+      };
+
+      updateCount();
+    });
+  }
 }
