@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import emailjs from '@emailjs/browser'
 
 @Component({
@@ -9,10 +10,10 @@ import emailjs from '@emailjs/browser'
 })
 export class HomeComponent {
 
-  constructor(private fb:FormBuilder) { }
+  constructor(private fb:FormBuilder, private snack:MatSnackBar) { }
 
   contactData = {
-    fullname: '',
+    fullname: '', 
     email: '',
     subject: '',
     message: ''
@@ -30,6 +31,6 @@ export class HomeComponent {
       reply_to: "none",
       });
 
-    alert('Email Sent Successfully');
+      this.snack.open('Email Sent Successfully');
   }
 }
