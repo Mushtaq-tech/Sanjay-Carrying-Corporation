@@ -2,13 +2,13 @@
 
 <div class="hero">
     <video autoplay loop muted plays-inline class="back-video">
-        <source src="assets/video.mp4" type="video/mp4">
+        <source [src]="videoSrc" type="video/mp4">
     </video>
     <nav>
-        <img src="assets/scc-logo.png" alt="logo" height="80px" width="80px">
+        <img src="/assets/scc-logo.png" alt="logo" height="80px" width="80px">
         <ul>
             <li><a routerLink="/">Home</a></li>
-            <li><a >About Us</a></li>
+            <li><a href="/about">About Us</a></li>
             <li><a routerLink="/contact">Contact</a></li>
         </ul>
     </nav>
@@ -17,6 +17,7 @@
         <a routerLink="">Explore</a>
     </div>
 </div>
+
 
 <section class="stats-section">
     <div class="stats-container">

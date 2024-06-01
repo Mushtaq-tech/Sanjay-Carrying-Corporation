@@ -11,6 +11,9 @@ import emailjs from '@emailjs/browser'
 })
 export class HomeComponent implements OnInit {
 
+
+  videoSrc = 'assets/video.mp4';
+
   constructor(private renderer: Renderer2, @Inject(PLATFORM_ID) private platformId: Object, private fb:FormBuilder, private snack:MatSnackBar) { }
 
   contactData = {
