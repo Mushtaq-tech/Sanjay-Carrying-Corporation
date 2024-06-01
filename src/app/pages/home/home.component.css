@@ -247,6 +247,10 @@ nav ul li a{
     font-size: 2rem;
     font-weight: bold;
 }
+.stat ul li{
+    font-size: 1.2rem;
+    font-weight: bold;
+}
 
 .stat p {
     margin-top: 5px;

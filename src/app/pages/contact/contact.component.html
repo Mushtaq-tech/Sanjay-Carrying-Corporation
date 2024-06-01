@@ -1,36 +1,45 @@
 <nav>
-    <img src="assets/scc-logo.png" alt="logo" height="80px" width="80px">
-    <ul>
-        <li><a routerLink="/">Home</a></li>
-        <li><a routerLink="/aboutus">About Us</a></li>
-        <li><a routerLink="/contact">Contact</a></li>
-    </ul>
+  <img src="assets/scc-logo.png" alt="logo" height="80px" width="80px">
+  <ul>
+    <li><a routerLink="/">Home</a></li>
+    <li><a routerLink="/aboutus">About Us</a></li>
+    <li><a routerLink="/contact">Contact</a></li>
+  </ul>
 </nav>
 
-<div class="contact-form-container">
-    <form (ngSubmit)="onSubmit()" #contactForm="ngForm">
-      <div class="form-group">
-        <label for="fullname">Full Name</label>
-        <input type="text" id="fullname" name="fullname" required [(ngModel)]="contactData.fullname" class="form-control">
-      </div>
-  
-      <div class="form-group">
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" required [(ngModel)]="contactData.email" class="form-control">
-      </div>
-  
-      <div class="form-group">
-        <label for="subject">Subject</label>
-        <input type="text" id="subject" name="subject" required [(ngModel)]="contactData.subject" class="form-control">
-      </div>
-  
-      <div class="form-group">
-        <label for="message">Message</label>
-        <textarea id="message" name="message" required [(ngModel)]="contactData.message" class="form-control"></textarea>
-      </div>
-  
-      <button type="submit" class="btn-submit">Submit</button>
+<section class="contact-section">
+  <div class="contact-container">
+    <div class="contact-image">
       
-    </form>
+    </div>
+    <div class="contact-info">
+      <h2>Contact us</h2>
+      <p>Reach out to us at any of the following</p>
+      <p><strong>Our Head Office Address</strong><br>
+        8-a Navram Kutir Prabhu Ram Nagar Kolsewadi Kalyan-east, Thane Maharashtra PinCode-421306</p>
+      <p><strong>Call for help</strong><br>+91 96866 15660</p>
+      <p><strong>Mail us</strong><br>sanjaycarryingcorporation09&#64;rediffmail.com</p>
+      <div class="social-icons">
+        <!-- Add your social icons here -->
+      </div>
+    </div>
+    <div class="contact-form">
+      <h3>Request a Callback</h3>
+      <form (ngSubmit)="onSubmit()" #contactForm="ngForm">
+        <div class="form-group">
+          <input type="text" id="fullname" name="fullname" required [(ngModel)]="contactData.fullname" placeholder="Your name">
+        </div>
+        <div class="form-group">
+          <input type="email" id="email" name="email" required [(ngModel)]="contactData.email" placeholder="Your email">
+        </div>
+        <div class="form-group">
+          <input type="subject" id="phone" name="phone" required [(ngModel)]="contactData.subject" placeholder="Phone number">
+        </div>
+        <div class="form-group">
+          <textarea id="message" name="message" required [(ngModel)]="contactData.message" placeholder="Your message"></textarea>
+        </div>
+        <button type="submit" class="btn-submit">Submit</button>
+      </form>
+    </div>
   </div>
-  
+</section>
