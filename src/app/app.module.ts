@@ -9,14 +9,13 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './pages/home/home.component';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
-import { AboutusComponent } from './pages/aboutus/aboutus.component';
+
 import { ContactComponent } from './pages/contact/contact.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    AboutusComponent,
     ContactComponent
   ],
   imports: [

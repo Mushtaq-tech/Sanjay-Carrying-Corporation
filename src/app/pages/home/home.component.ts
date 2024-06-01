@@ -125,7 +125,7 @@ export class HomeComponent implements OnInit {
       from_name: this.contactData.fullname,
       subject: this.contactData.subject,
       message: this.contactData.message,
-      reply_to: "none",
+      reply_to: this.contactData.email,
       });
 
     this.snack.open('Email Sent Successfully');
