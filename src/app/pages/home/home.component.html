@@ -7,17 +7,17 @@
         <img src="assets/scc-logo.png" alt="logo" height="80px" width="80px">
         <ul>
             <li><a routerLink="/">Home</a></li>
-            <li><a >About Us</a></li>
+            <li><a  (click)="scrollToShowcaseSection()">About Us</a></li>
             <li><a routerLink="/contact">Contact</a></li>
         </ul>
     </nav>
     <div class="content">
         <h1>Sanjay <span style="color: red;">Carrying Corporation</span></h1>
-        <a routerLink="">Explore</a>
+        <a (click)="scrollToStatsSection()">Explore</a>
     </div>
 </div>
 
-<section class="stats-section">
+<section #statsSection class="stats-section">
     <div class="stats-container">
         <div class="arrow-left"></div>
         
@@ -47,7 +47,7 @@
     </div>
 </section>
 
-<section class="showcase" id="explore-places">
+<section  #showcaseSection class="showcase" id="explore-places">
     <div class="container">
         <div class="row row1">
             <div class="img-box"><img id="image1" src="assets/img1.jpg" alt="Image description"></div>

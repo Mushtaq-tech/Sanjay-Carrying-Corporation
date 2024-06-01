@@ -1,5 +1,5 @@
-import { Component, OnInit, Renderer2, Inject, PLATFORM_ID } from '@angular/core';
-import { isPlatformBrowser } from '@angular/common';
+import { Component, OnInit, Renderer2, Inject, PLATFORM_ID , ViewChild, ElementRef} from '@angular/core';
+import { isPlatformBrowser, } from '@angular/common';
 import { FormBuilder } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import emailjs from '@emailjs/browser'
@@ -11,9 +11,11 @@ import emailjs from '@emailjs/browser'
 })
 export class HomeComponent implements OnInit {
 
+  
 
   videoSrc = 'assets/video.mp4';
-
+  @ViewChild('statsSection') statsSection: ElementRef | undefined;
+  @ViewChild('showcaseSection') showcaseSection: ElementRef | undefined;
   constructor(private renderer: Renderer2, @Inject(PLATFORM_ID) private platformId: Object, private fb:FormBuilder, private snack:MatSnackBar) { }
 
   contactData = {
@@ -117,7 +119,17 @@ export class HomeComponent implements OnInit {
     });
   }
 
+  scrollToStatsSection() {
+    if (this.statsSection) {
+      this.statsSection.nativeElement.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
 
+  scrollToShowcaseSection() {
+    if (this.showcaseSection) {
+      this.showcaseSection.nativeElement.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
 
   async onSubmit() {
 
