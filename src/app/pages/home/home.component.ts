@@ -92,7 +92,7 @@ export class HomeComponent implements OnInit {
 
           if (count < target) {
             counter.innerText = `${Math.ceil(count + increment)}`;
-            setTimeout(updateCount, 20);
+            setTimeout(updateCount, 80);
           } else {
             counter.innerText = target.toString();
           }
