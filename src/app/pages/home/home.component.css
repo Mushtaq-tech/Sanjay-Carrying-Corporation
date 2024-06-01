@@ -18,6 +18,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    -webkit-box-shadow:0px 0px 23px 0px rgba(46,25,27,0.9);
+-moz-box-shadow: 0px 0px 23px 0px rgba(46,25,27,0.9);
+box-shadow: 0px 0px 23px 0px rgba(46,25,27,0.9);
 }
 
 
@@ -101,11 +104,17 @@ nav ul li a{
 .showcase{
     background: #ddd;
     padding: 4%;
+    -webkit-box-shadow:0px 0px 23px 0px rgba(46,25,27,0.9);
+-moz-box-shadow: 0px 0px 23px 0px rgba(46,25,27,0.9);
+box-shadow: 0px 0px 23px 0px rgba(46,25,27,0.9);
 }
 .row{
     height: 350px;
     background: #fff;
     box-shadow: 0px 0px 20px 0px #00000050;
+    -webkit-box-shadow:0px 0px 23px 0px rgba(46,25,27,0.9);
+-moz-box-shadow: 0px 0px 23px 0px rgba(46,25,27,0.9);
+box-shadow: 0px 0px 23px 0px rgba(46,25,27,0.9);
 }
 .row1{
     margin-bottom: 3rem;
@@ -184,7 +193,7 @@ nav ul li a{
     width: 100%;
 }
 .slider::before,.slider::after{
-    background: linear-gradient(to right,rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);
+    background: linear-gradient(to right,rgba(255,255,255,0) 0%,rgba(255,255,255,0) 100%);
     content: '';
     height: 100%;
     position: absolute;
@@ -217,6 +226,8 @@ nav ul li a{
     opacity: 0;
 }
 
+
+/*STATS*/
 .stats-section {
     display: flex;
     justify-content: center;
@@ -334,6 +345,7 @@ nav ul li a{
     text-align: center;
     font-size: 2rem;
     margin-bottom: 1rem;
+    margin-top: 1.5rem;
 }
 
 
@@ -347,6 +359,9 @@ nav ul li a{
     padding: 50px 0;
     background-color: #f4f4f4;
     margin-top: 100px;
+    -webkit-box-shadow:0px 0px 58px 18px rgba(46,25,27,0.9);
+-moz-box-shadow: 0px 0px 58px 18px rgba(46,25,27,0.9);
+box-shadow: 0px 0px 58px 18px rgba(46,25,27,0.9);
   }
   
   .contact-container {
@@ -370,6 +385,7 @@ nav ul li a{
   
   .contact-info h2 {
     font-size: 2rem;
+    font-weight: bold;
   }
   
   .contact-info p {
