@@ -1,5 +1,8 @@
 import { Component, OnInit, Renderer2, Inject, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
+import { FormBuilder } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import emailjs from '@emailjs/browser'
 
 @Component({
   selector: 'app-home',
@@ -8,7 +11,15 @@ import { isPlatformBrowser } from '@angular/common';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private renderer: Renderer2, @Inject(PLATFORM_ID) private platformId: Object) { }
+  constructor(private renderer: Renderer2, @Inject(PLATFORM_ID) private platformId: Object, private fb:FormBuilder, private snack:MatSnackBar) { }
+
+  contactData = {
+    fullname: '',
+    email: '',
+    subject: '',
+    message: ''
+  };
+
 
   ngOnInit(): void {
     if (isPlatformBrowser(this.platformId)) {
@@ -101,5 +112,22 @@ export class HomeComponent implements OnInit {
 
       updateCount();
     });
+  }
+
+
+
+  async onSubmit() {
+
+    emailjs.init('TZ6WGG8HAEMrYFF7S')
+
+    let resp= await emailjs.send("service_5yp8see","template_ud0m9un",{
+      from_email: this.contactData.email,
+      from_name: this.contactData.fullname,
+      subject: this.contactData.subject,
+      message: this.contactData.message,
+      reply_to: "none",
+      });
+
+    this.snack.open('Email Sent Successfully');
   }
 }
