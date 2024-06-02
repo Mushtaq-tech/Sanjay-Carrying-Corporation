@@ -108,7 +108,7 @@ export class HomeComponent implements OnInit {
 
           if (count < target) {
             counter.innerText = `${Math.ceil(count + increment)}`;
-            setTimeout(updateCount, 80);
+            setTimeout(updateCount, 200);
           } else {
             counter.innerText = target.toString();
           }
@@ -143,6 +143,6 @@ export class HomeComponent implements OnInit {
       reply_to: this.contactData.email,
       });
 
-    this.snack.open('Email Sent Successfully');
+    this.snack.open('Email Sent Successfully', 'Close', {duration: 3000});
   }
 }
