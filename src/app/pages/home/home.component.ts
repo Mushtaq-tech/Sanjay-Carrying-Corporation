@@ -25,6 +25,8 @@ export class HomeComponent implements OnInit {
     message: ''
   };
 
+  emailSent = false;
+
 
   ngOnInit(): void {
     if (isPlatformBrowser(this.platformId)) {
@@ -133,9 +135,9 @@ export class HomeComponent implements OnInit {
 
   async onSubmit() {
 
-    emailjs.init('TZ6WGG8HAEMrYFF7S')
+    emailjs.init('fIQYtOablJh_U8NvK')
 
-    let resp= await emailjs.send("service_5yp8see","template_ud0m9un",{
+    let resp= await emailjs.send("service_soyo507","template_tbgzbwo",{
       from_email: this.contactData.email,
       from_name: this.contactData.fullname,
       subject: this.contactData.subject,
@@ -143,6 +145,9 @@ export class HomeComponent implements OnInit {
       reply_to: this.contactData.email,
       });
 
-    this.snack.open('Email Sent Successfully', 'Close', {duration: 3000});
+      this.emailSent = true; // Show the success message
+      setTimeout(() => {
+        this.emailSent = false; // Hide the success message after 3 seconds
+      }, 3000);
   }
 }

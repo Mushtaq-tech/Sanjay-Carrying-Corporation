@@ -11,25 +11,31 @@ export class ContactComponent {
 
   constructor(private fb:FormBuilder, private snack:MatSnackBar) { }
 
+  emailSent = false;
   contactData = {
     fullname: '',
     email: '',
     subject: '',
-    message: ''
+    message: '',
+    phNo: ''
   };
 
   async onSubmit() {
 
-    emailjs.init('TZ6WGG8HAEMrYFF7S')
+    emailjs.init('fIQYtOablJh_U8NvK')
 
-    let resp= await emailjs.send("service_5yp8see","template_ud0m9un",{
+    let resp= await emailjs.send("service_soyo507","template_tbgzbwo",{
       from_email: this.contactData.email,
       from_name: this.contactData.fullname,
       subject: this.contactData.subject,
       message: this.contactData.message,
       reply_to: "none",
+      ph_no: this.contactData.phNo
       });
 
-    this.snack.open('Email Sent Successfully');
+      this.emailSent = true; // Show the success message
+      setTimeout(() => {
+        this.emailSent = false; // Hide the success message after 3 seconds
+      }, 3000);
   }
 }
